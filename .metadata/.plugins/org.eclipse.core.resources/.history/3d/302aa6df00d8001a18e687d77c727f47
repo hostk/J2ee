@@ -1,0 +1,9 @@
+package library;
+
+public class BookRent {
+	private String bname;
+	private String author;
+	private String isbn;
+	private double price;
+	private int qty;
+}

@@ -1,0 +1,6 @@
+package library;
+
+public class Grade extends Student{
+	public String grade;
+	
+}

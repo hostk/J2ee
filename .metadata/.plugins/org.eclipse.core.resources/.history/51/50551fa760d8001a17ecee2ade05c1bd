@@ -1,0 +1,20 @@
+package library;
+
+public class Category{
+	private int catId;
+	
+	public int getCatId() {
+		return catId;
+	}
+
+	public void setCatId(int catId) {
+		this.catId = catId;
+	}
+
+	public Category(int id) {
+		this.catId=id;
+	}
+	
+	
+	
+}

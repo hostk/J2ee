@@ -1,0 +1,33 @@
+
+Aug 06, 2020 10:43:56.56 NEW SESSION
+Aug 06, 2020 10:43:56.56 
+Aug 06, 2020 10:43:56.56 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Aug 06, 2020 10:43:56.56 
+Aug 06, 2020 10:43:57.29 
+Aug 06, 2020 10:43:57.29 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Aug 06, 2020 10:43:57.29 
+Aug 06, 2020 10:44:03.70 
+Aug 06, 2020 10:44:03.70 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Aug 06, 2020 10:44:03.70 
+Aug 06, 2020 10:44:09.75 
+Aug 06, 2020 10:44:09.76 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Aug 06, 2020 10:44:09.76 
+Aug 06, 2020 10:44:40.18 [27361, Main Thread] ###!!! ABORT: file resource://gre/modules/TelemetryEnvironment.jsm, line 544
+Aug 06, 2020 10:44:40.18 [27361, Main Thread] ###!!! ABORT: file resource://gre/modules/TelemetryEnvironment.jsm, line 544
+Aug 06, 2020 10:44:40.18 ExceptionHandler::GenerateDump cloned child 27952
+Aug 06, 2020 10:44:40.18 ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+Aug 06, 2020 10:44:40.18 ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+
+Aug 07, 2020 10:46:30.32 NEW SESSION
+Aug 07, 2020 10:46:30.32 [20199, Main Thread] ###!!! ABORT: file resource://gre/modules/TelemetryEnvironment.jsm, line 544
+Aug 07, 2020 10:46:30.33 [20199, Main Thread] ###!!! ABORT: file resource://gre/modules/TelemetryEnvironment.jsm, line 544
+Aug 07, 2020 10:46:30.33 ExceptionHandler::GenerateDump cloned child 20528
+Aug 07, 2020 10:46:30.33 ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+Aug 07, 2020 10:46:30.33 ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+
+Aug 07, 2020 11:56:31.97 NEW SESSION
+Aug 07, 2020 11:56:31.97 [7735, Main Thread] ###!!! ABORT: file resource://gre/modules/TelemetryEnvironment.jsm, line 544
+Aug 07, 2020 11:56:31.97 [7735, Main Thread] ###!!! ABORT: file resource://gre/modules/TelemetryEnvironment.jsm, line 544
+Aug 07, 2020 11:56:31.97 ExceptionHandler::GenerateDump cloned child 8058
+Aug 07, 2020 11:56:31.97 ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+Aug 07, 2020 11:56:31.97 ExceptionHandler::WaitForContinueSignal waiting for continue signal...

@@ -1,0 +1,5 @@
+127.0.0.1 - - [05/Aug/2020:11:27:38 +0630] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [05/Aug/2020:11:27:41 +0630] "GET /ServletPrjForSession/ HTTP/1.1" 200 248
+127.0.0.1 - - [05/Aug/2020:11:27:48 +0630] "GET /ServletPrjForSession/FirstServlet?name=Minko HTTP/1.1" 200 27
+127.0.0.1 - - [05/Aug/2020:11:32:11 +0630] "GET /ServletPrjForSession/SecondServlet HTTP/1.1" 200 26
+127.0.0.1 - - [05/Aug/2020:11:32:23 +0630] "GET /ServletPrjForSession/ThirdServlet HTTP/1.1" 200 30

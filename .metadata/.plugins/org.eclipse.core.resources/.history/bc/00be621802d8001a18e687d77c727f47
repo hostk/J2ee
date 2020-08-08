@@ -1,0 +1,6 @@
+package library;
+
+public class Grade {
+	public String grade;
+	
+}

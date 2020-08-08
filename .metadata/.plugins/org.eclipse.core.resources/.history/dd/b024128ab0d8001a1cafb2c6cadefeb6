@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<c:set var="String" value="Welcome to javascript"/>
+<c:if test="${fn:contains(String,'to')}">
+ <p>Found JAVASCRIPT string</p>
+</c:if>
+
+<c:if test="${fn:containsIgnoreCase(String,'javAscripT')}">
+ <p>Found Javascript string</p>
+</c:if>
+
+<c:set var="String1" value="Learn to Programming"/>
+<c:if test="${fn:endsWith(String1,'Programming')}">
+	<p>EndsWith successful</p>
+</c:if>
+
+<c:set var="string2" value="Min Ko Ko"/>
+<c:set var="string3" value="<xxx>Min Ko Ko</xxx>"/>
+
+<p>String 2 : ${fn:escapeXml(string2)}</p>
+<p>String 3 : ${fn:escapeXml(string3) }</p>
+<p>String 3 : ${string3 }</p>
+
+<p>index-1: ${fn:indexOf(string2,'K') }</p>
+<p>index-2 : ${fn:indexOf(String1,'to') }</p>
+
+<c:set var="trimm" value="min ko ko     ko    ko  ko"/>
+<p>trimm of Length : ${fn:length(trimm)}</p>
+<c:set var="trimm2" value="${fn:trim(trimm)}"/>
+<p>trimm2 of length : ${trimm.length(trimm2) }</p>
+
+</body>
+</html>

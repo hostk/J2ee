@@ -1,0 +1,13 @@
+package servletConfig;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+/**
+ * Servlet implementation class ServletConfigDemo
+ */
+@WebServlet("/ServletConfigDemo")
+public class ServletConfigDemo extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+}
