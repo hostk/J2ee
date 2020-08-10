@@ -2,7 +2,6 @@ INDEX VERSION 1.4+/home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/
 3263945580.index
 1309621784.index
 2370426877.index
-1850118532.index
 374071932.index
 855406058.index
 95758480.index
@@ -11,4 +10,3 @@ INDEX VERSION 1.4+/home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/
 2842909476.index
 3048449924.index
 3011001253.index
-3263945580.index

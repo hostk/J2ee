@@ -1,0 +1,12 @@
+package library;
+
+public class RentReturn {
+	private Book bookid;
+	private Student studentId;
+	private int id;
+	private String rentDate;	
+	private String retrunDate;
+	private String bookRent;
+	private String bookReturn;
+
+}

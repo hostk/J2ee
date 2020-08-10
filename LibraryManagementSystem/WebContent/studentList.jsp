@@ -6,29 +6,31 @@
 <head>
 <meta charset="UTF-8">
 <title>StudentList</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 <body class="container-fluid">
+<%@ include file="menu.jsp" %>
+
 	<h1>Student Lists</h1>
-<table class="table table-light">
-<tr scope="row">
-<td scope="col">Student Id</td>
-<td scope="col">Name</td>
-<td scope="col">Roll No</td>
-<td scope="col">Phone No</td>
-<td scope="col">Grade</td>
+<table class="table table-bordered table-dark">
+<tr>
+<th scope="col">Student Id</th>
+<th scope="col">Name</th>
+<th  scope="col">Roll No</th>
+<th scope="col">Phone No</th>
+<th scope="col">Grade</th>
 </tr>
 <c:forEach var="std" items="${studentList}">
-<tr scope="row">
-<td scope="col">${std.id}</td>
-<td scope="col">${std.name }</td>
-<td scope="col">${std.rollNo }</td>
-<td scope="col">${std.phoneNo }</td>
-<td scope="col">${std.gradeId}</td>
+<tr>
+<td>${std.id}</td>
+<td>${std.name }</td>
+<td>${std.rollNo }</td>
+<td>${std.phoneNo }</td>
+<td>${std.gradeId}</td>
 </tr>
 </c:forEach>
 </table>

@@ -1,0 +1,65 @@
+package library;
+
+public class RentReturn {
+	private	int bookid;
+	private int studentId;
+	private int id;
+	private String rentDate;	
+	private String retrunDate;
+	private String bookRent;
+	private String bookReturn;
+	public RentReturn(int bookid, int studentId, int id, String rentDate, String retrunDate, String bookRent,
+			String bookReturn) {
+		super();
+		this.bookid = bookid;
+		this.studentId = studentId;
+		this.id = id;
+		this.rentDate = rentDate;
+		this.retrunDate = retrunDate;
+		this.bookRent = bookRent;
+		this.bookReturn = bookReturn;
+	}
+	public int getBookid() {
+		return bookid;
+	}
+	public void setBookid(int bookid) {
+		this.bookid = bookid;
+	}
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getRentDate() {
+		return rentDate;
+	}
+	public void setRentDate(String rentDate) {
+		this.rentDate = rentDate;
+	}
+	public String getRetrunDate() {
+		return retrunDate;
+	}
+	public void setRetrunDate(String retrunDate) {
+		this.retrunDate = retrunDate;
+	}
+	public String getBookRent() {
+		return bookRent;
+	}
+	public void setBookRent(String bookRent) {
+		this.bookRent = bookRent;
+	}
+	public String getBookReturn() {
+		return bookReturn;
+	}
+	public void setBookReturn(String bookReturn) {
+		this.bookReturn = bookReturn;
+	}
+	
+}
