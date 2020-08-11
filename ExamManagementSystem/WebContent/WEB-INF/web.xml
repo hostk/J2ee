@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>ExamManagementSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  <servlet-name>student</servlet-name>
+  <servlet-class>manage.StudentManage</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>student</servlet-name>
+  <url-pattern>/manage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>exam</servlet-name>
+  <servlet-class>manage.ExamManage</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>exam</servlet-name>
+  <url-pattern>/manageExam</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>question</servlet-name>
+  <servlet-class>manage.QuestionManage</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>question</servlet-name>
+  <url-pattern>/manageQuestion</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>adminServlet</servlet-name>
+  <servlet-class>manage.StudentManage</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>adminServlet</servlet-name>
+  <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>f1</filter-name>
+  	<filter-class>manage.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>f1</filter-name>
+  	<url-pattern>/login</url-pattern>
+  </filter-mapping>
+   <!-- <servlet>
+  <servlet-name>adminServlet</servlet-name>
+  <servlet-class>manage.StudentManage</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>adminServlet</servlet-name>
+  <url-pattern>/login</url-pattern>
+  </servlet-mapping> -->
+</web-app>
