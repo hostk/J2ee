@@ -77,9 +77,6 @@
 <option value="${exams.id }">${exams.name}</option>
 </c:forEach>
 </select>
-<div class="form-group">
-<label>Answer</label>
-</div>
 <input type="submit" value="Add" class="btn btn-success btn-block mt-3">
 </form>
 

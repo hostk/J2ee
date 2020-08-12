@@ -1,12 +1,16 @@
 package manage;
 
-import java.io.IOException;
+import java.sql.*;
+import java.io.*;
+import java.util.*;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import ems.*;
 /**
  * Servlet implementation class DAO
  */
@@ -22,20 +26,20 @@ public class DAO extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		int id = Integer.parseInt(request.getParameter("input"));
+
+		ExamManager em = new ExamManager();
+		
+		em.getQuestionWithAnswerByExam(id);
+		
+		request.setAttribute("list", em.getQuestionWithAnswerByExam(id));
+		System.out.println(em.getQuestionWithAnswerByExam(id));
+		RequestDispatcher rd = request.getRequestDispatcher("View.jsp");
+		rd.forward(request, response);
+		
+		
 	}
 
 }

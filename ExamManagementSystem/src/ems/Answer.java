@@ -1,10 +1,14 @@
 package ems;
 
-public class Answer {
+import java.util.List;
+
+public class Answer{
 	private int id;
 	private String name;
 	private boolean status;
 	private int questionId;
+	
+	
 	public Answer(int id, String name, boolean status, int questionId) {
 		super();
 		this.id = id;
@@ -36,5 +40,6 @@ public class Answer {
 	public void setQuestionId(int questionId) {
 		this.questionId = questionId;
 	}
+	
 	
 }

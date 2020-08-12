@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ems.Exam;
+import ems.Question;
 
 /**
  * Servlet implementation class QuestionManage
@@ -39,40 +40,46 @@ public class QuestionManage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try{
+			ResultSet rs =null;
 			String name = request.getParameter("name");
 			int mark = Integer.parseInt(request.getParameter("mark"));
 			int eid = Integer.parseInt(request.getParameter("elist"));
-			
+			//String answer = request.getParameter("answer");
+			//boolean bb = Boolean.parseBoolean(request.getParameter("status"));
 			try{
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				
 				Connection con= DriverManager.getConnection("jdbc:mysql://localhost/ExamManagementSystem","root","minkoko");
 					String insert="insert into question(qid,name,mark,exam_id) values(null,?,?,?)";
-					
-					if(name !="" && mark!=0){
+					String asql ="insert into answer(id,name,status,question_id) values(null,?,?,?)";
+					if(name !="" && mark!=0 ){
 						PreparedStatement ps = con.prepareStatement(insert);
 						ps.setString(1, name);
 						ps.setInt(2,mark);
 						ps.setInt(3, eid);
 						int status = ps.executeUpdate();
-						if(status>0){
-							System.out.print("Insert successful");
+						if(status>1){
+							System.out.println("Insert Successful");
 						}
+						
 						String sql ="select * from question";
 						Statement stm=con.createStatement();
-						ResultSet rs=stm.executeQuery(sql);
+						rs=stm.executeQuery(sql);
 						
-						List<Exam> examList=new ArrayList<Exam>();
+						List<Question> questList=new ArrayList<Question>();
 						
 						while(rs.next()){
-							Exam ex = new Exam(rs.getInt(1),rs.getString(2),rs.getInt(3));
-							examList.add(ex);
+							Question ex = new Question(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4));
+							questList.add(ex);
 						}
-						con.close();
-						request.setAttribute("ExamList", examList);
-						RequestDispatcher rd = request.getRequestDispatcher("ExamManage.jsp");
+						request.setAttribute("questList", questList);
+						RequestDispatcher rd = request.getRequestDispatcher("ManageQuestion.jsp");
 						rd.forward(request, response);
 				}
+					
+					con.close();
+
+					
 				
 			}catch (SQLException e){
 				e.printStackTrace();

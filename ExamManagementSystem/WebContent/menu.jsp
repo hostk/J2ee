@@ -16,7 +16,7 @@
 	<li class="nav-item"><a href="StudentManage.jsp" class="nav-link">Manage Student</a></li>
 		<li class="nav-item"><a href="ExamManage.jsp" class="nav-link">Manage Exam</a></li>
 	<li class="nav-item"><a href="ManageQuestion.jsp" class="nav-link">Manage Question</a></li>
-	<li class="nav-item"><a href="BookList.jsp" class="nav-link">Book List</a></li>
+	<li class="nav-item"><a href="ManageAnswer.jsp" class="nav-link">Manage Answer</a></li>
 	<li class="nav-item"><a href="rentBook.jsp" class="nav-link">Book Rent</a></li>
 		<li class="nav-item"><a href="returnBook.jsp" class="nav-link">Book Return</a></li>
 </ul>
