@@ -1,7 +1,0 @@
-package student;
-
-public class Student {
-	private String name ;
-	private String phoneNo;
-	private String rollNo;
-}
