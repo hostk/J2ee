@@ -20,4 +20,11 @@
 			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
+	<section name="CleanDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="321"/>
+		<item key="DIALOG_Y_ORIGIN" value="121"/>
+		<item key="DIALOG_WIDTH" value="731"/>
+		<item key="DIALOG_HEIGHT" value="415"/>
+		<item key="TOGGLE_SELECTED" value="true"/>
+	</section>
 </section>
