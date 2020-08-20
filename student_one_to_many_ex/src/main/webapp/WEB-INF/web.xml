@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>InsertStudentServlet</servlet-name>
+  	<display-name>InsertStudentServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.minko.otm.services.InsertStudentServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SaveGradeByYear</servlet-name>
+  	<display-name>SaveGradeByYear</display-name>
+  	<description></description>
+  	<servlet-class>com.minko.otm.services.SaveGradeByYear</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>InsertStudentServlet</servlet-name>
+  	<url-pattern>/InsertStudentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SaveGradeByYear</servlet-name>
+  	<url-pattern>/SaveGradeByYear</url-pattern>
+  </servlet-mapping>
+</web-app>

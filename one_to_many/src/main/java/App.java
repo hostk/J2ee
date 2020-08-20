@@ -27,7 +27,7 @@ public class App {
 		session = Sfactoy().openSession();
 		session.beginTransaction();
 		
-		Book book = new Book("Flying Birds","133849440404")
+		Book book = new Book("Flying Birds","133849440404");
 		
 	}
 }

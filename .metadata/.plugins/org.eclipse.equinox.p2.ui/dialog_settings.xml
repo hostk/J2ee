@@ -10,13 +10,13 @@
 	<section name="AvailableIUsPage">
 		<item key="AvailableViewType" value="1"/>
 		<item key="ShowLatestVersionsOnly" value="true"/>
-		<item key="HideInstalledContent" value="true"/>
+		<item key="HideInstalledContent" value="false"/>
 		<item key="ResolveInstallWithAllSites" value="true"/>
-		<item key="FilterOnEnv" value="false"/>
+		<item key="FilterOnEnv" value="true"/>
 		<item key="AvailableNameColumnWidth" value="675"/>
 		<item key="AvailableVersionColumnWidth" value="535"/>
-		<item key="AvailableListSashWeight" value="800"/>
-		<item key="AvailableDetailsSashWeight" value="200"/>
+		<item key="AvailableListSashWeight" value="795"/>
+		<item key="AvailableDetailsSashWeight" value="477"/>
 	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.SelectableIUsPage">
 		<item key="NameColumnWidth" value="540"/>

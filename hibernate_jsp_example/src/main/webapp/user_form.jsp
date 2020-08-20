@@ -7,7 +7,7 @@
  <title>User Management Application</title>
 </head>
 <body>
- <center>
+ <div align="center">
   <h1>User Management</h1>
         <h2>
          <a href="new">Add New User</a>
@@ -15,12 +15,13 @@
          <a href="list">List All Users</a>
          
         </h2>
- </center>
+ </div>
     <div align="center">
   <c:if test="${user != null}">
    <form action="update" method="get">
         </c:if>
         <c:if test="${user == null}">
+        
    <form action="insert" method="get">
         </c:if>
         <table border="1" cellpadding="5">

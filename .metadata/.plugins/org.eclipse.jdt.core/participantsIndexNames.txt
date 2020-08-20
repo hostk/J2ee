@@ -11,10 +11,14 @@ INDEX VERSION 1.131
 /minkoko.hibernate/src/main/java
 /home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1092852578.index
 /many_to_many/resources
+/home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3588789375.index
+/student_one_to_many_ex/resources
 /home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1758394601.index
 /one_to_many_Ex/resources
 /home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2904084267.index
 /hibernate_jsp_example/src/main/java
+/home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2688239721.index
+/student_one_to_many_ex/resources
 /home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4104512306.index
 /hibernate/src/main/java
 /home/minko/Desktop/InternJavaProject_J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/31177678.index
