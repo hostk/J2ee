@@ -23,14 +23,14 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	public Employee(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 
-	void show() {
+	public void show() {
 		System.out.println(id +" : "+ name);
 	}
 }

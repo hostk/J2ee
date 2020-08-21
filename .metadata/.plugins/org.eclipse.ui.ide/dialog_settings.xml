@@ -7,6 +7,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/minko/Desktop/FireFox_Download/spring_mvc_1-master"/>
+			<item value="/home/minko/Desktop/FireFox_Download/spring_bean_injection-master"/>
 			<item value="/home/minko/Desktop/FireFox_Download/onlinequiz"/>
 			<item value="/home/minko/Documents/ServletPrjForSession"/>
 		</list>

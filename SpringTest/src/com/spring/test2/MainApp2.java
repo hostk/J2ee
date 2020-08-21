@@ -10,9 +10,8 @@ public class MainApp2 {
 	public static void main(String[] args) {
 		Resource r = new ClassPathResource("Beans2.xml");
 		BeanFactory factory=new XmlBeanFactory(r);
-		Employee e = (Employee) factory.getBean("employee");
-		
-		e.show();
+		Employee s = (Employee) factory.getBean("employee");
+		s.show();
 	}
 
 }
