@@ -10,25 +10,25 @@
 </head>
 <body>
 <h3>Item List</h3>
-<a href="newItem.htm">New Student</a>
+<a href="new_purchase.htm">New Purchase</a>
 <table>
 	<thead>
 		<tr>
 			<th>No</th>
 			<th>Name</th>
-			<th>Price</th>
-			<th>Category</th>
 			<th>QTY</th>
+			<th>Item Name</th>
+			<th>Date</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach items="${ items }" var="item" varStatus="row">
+		<c:forEach items="${ purchases }" var="pur" varStatus="row">
 			<tr>
 				<td>${row.count }</td>
-				<td>${item.name }</td>
-				<td>${item.price }</td>
-				<td>${item.category.name }</td>
-				<td>${item.qty }</td>
+				<td>${pur.name }</td>
+				<td>${pur.qty }</td>
+				<td>${pur.item.name }</td>
+				<td>${pur.purchaseDate}</td>
 			</tr>
 		</c:forEach>
 	</tbody>

@@ -27,7 +27,7 @@ public class ItemController {
 	@RequestMapping(value="/newItem.htm",method=RequestMethod.POST)
 	public String saveItem(@ModelAttribute(value="iList") Item iList) throws Exception {
 		itemServices.saveItem(iList);
-		return "redriect:/item_list.htm";
+		return "redirect:/item_list.htm";
 	}
 	
 	@RequestMapping(value="/item_list.htm")
@@ -37,19 +37,19 @@ public class ItemController {
 	}
 	@RequestMapping(value="/new_category.htm")
 	public String createCategory(Model model) {
-		model.addAttribute("cList",new Category());
+		model.addAttribute("categoryList",new Category());
 		return "new_category";
 	}
 	
 	@RequestMapping(value="/new_category.htm",method=RequestMethod.POST)
-	public String saveCategory(@ModelAttribute(value="cList") Category cList) throws Exception {
+	public String saveCategory(@ModelAttribute(value="categoryList") Category cList) throws Exception {
 		itemServices.saveCategory(cList);
-		return "redriect:/item_list.htm";
+		return "redirect:/category_list.htm";
 	}
 	
 	@RequestMapping(value="/category_list.htm")
 	public String showCategory(Model model) {
-		model.addAttribute("category", itemServices.getCatList());
-		return "item_list";
+		model.addAttribute("categorys", itemServices.getCatList());
+		return "category_list";
 	}
 }

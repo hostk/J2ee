@@ -9,17 +9,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="newItem.htm" method="post" modelAttribute="iList">
-<label>Name</label>
-<form:input path="name" /> <br>
-<form:select path="category.id">
-	<c:forEach items="${cList}" var="cl">
+<form:form action="new_sale.htm" method="post" modelAttribute="sales">
+<form:select path="item.id">
+	<c:forEach items="${items}" var="cl">
 	<form:option value="${cl.id }">${cl.name }</form:option>
 	</c:forEach>
 </form:select><br>
 <label>QTY : </label>
-<form:input path="qty" /> <br>
-<label>Price</label><form:input path="price" /><br>
+<form:input path="qty"/> <br>
+<label>Date : </label>
+<form:input path="saleDate"/> <br>
 <input type="submit" value="Save" />
 </form:form>
 </body>

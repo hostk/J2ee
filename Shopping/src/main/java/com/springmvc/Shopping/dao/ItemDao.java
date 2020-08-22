@@ -3,8 +3,10 @@ package com.springmvc.Shopping.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -55,4 +57,22 @@ public class ItemDao {
 		Criteria cr = getSession().createCriteria(SaleItem.class);
 		return (List<SaleItem>)cr.list();
 	}
+	public void getItemByAddQty(int id,int qty) {
+		Query q = getSession().createQuery("from item where id= :id");
+		q.setParameter("id", id);
+		Item result = (Item)q.uniqueResult();
+		Integer i = result.getQty();
+		result.setQty(i+qty);
+		getSession().update(result);
+
+	}
+	public void getItemBySubQty(int id,int qty) {
+		Query q = getSession().createQuery("from Item where id= :id");
+		q.setParameter("id", id);
+		Item result = (Item)q.uniqueResult();
+		Integer i = result.getQty();
+		result.setQty(i-qty);
+		getSession().update(result);
+	}
+	
 }

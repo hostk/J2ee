@@ -1,5 +1,7 @@
 package com.springmvc.Shopping.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,35 +11,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="PurchaseItem")
-public class PurchaseItem {
+public class PurchaseItem implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	private String name;
-	private Date purchaseDate;
 	private Integer qty;
-	private Double TatolAmount;
+	private Date purchaseDate;
 	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
+	public PurchaseItem(Integer id, Integer qty, Date purchaseDate, Item item) {
+		super();
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+		this.qty = qty;
+		this.purchaseDate = purchaseDate;
+		this.item = item;
 	}
 
 	public Date getPurchaseDate() {
@@ -48,6 +42,14 @@ public class PurchaseItem {
 		this.purchaseDate = purchaseDate;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public Integer getQty() {
 		return qty;
 	}
@@ -56,43 +58,29 @@ public class PurchaseItem {
 		this.qty = qty;
 	}
 
-	public Double getTatolAmount() {
-		return TatolAmount;
-	}
-
-	public void setTatolAmount(Double tatolAmount) {
-		TatolAmount = tatolAmount;
-	}
 	
-	@OneToMany
-	@JoinColumn(name="item_id")
-	private List<Item> item;
+	
 
-	public List<Item> getItem() {
+
+	@ManyToOne
+	@JoinColumn(name="item_id")
+	private Item item=new Item();
+
+	
+
+	public Item getItem() {
 		return item;
 	}
 
-	public void setItem(List<Item> item) {
+	public void setItem(Item item) {
 		this.item = item;
 	}
 
-	public PurchaseItem(Integer id, String name, Date purchaseDate, Integer qty, Double tatolAmount, List<Item> item) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.purchaseDate = purchaseDate;
-		this.qty = qty;
-		TatolAmount = tatolAmount;
-		this.item = item;
+	public PurchaseItem() {
+		
 	}
 
-	public PurchaseItem(String name, Date purchaseDate, Integer qty, Double tatolAmount) {
-		super();
-		this.name = name;
-		this.purchaseDate = purchaseDate;
-		this.qty = qty;
-		TatolAmount = tatolAmount;
-	}
+	
 	
 	
 }

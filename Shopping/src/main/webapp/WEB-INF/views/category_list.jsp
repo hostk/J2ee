@@ -18,7 +18,6 @@
 			<th>Name</th>
 			<th>Price</th>
 			<th>Category</th>
-			<th>QTY</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -28,7 +27,6 @@
 				<td>${item.name }</td>
 				<td>${item.price }</td>
 				<td>${item.category.name }</td>
-				<td>${item.qty }</td>
 			</tr>
 		</c:forEach>
 	</tbody>

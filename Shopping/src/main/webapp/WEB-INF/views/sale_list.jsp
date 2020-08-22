@@ -9,26 +9,24 @@
 <title>Item List</title>
 </head>
 <body>
-<h3>Item List</h3>
-<a href="newItem.htm">New Student</a>
+<h3>SaleItem List</h3>
+<a href="new_sale.htm">New Sale</a>
 <table>
 	<thead>
 		<tr>
 			<th>No</th>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Category</th>
 			<th>QTY</th>
+			<th>Item Name</th>
+			<th>Date</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach items="${ items }" var="item" varStatus="row">
+		<c:forEach items="${ sales }" var="pur" varStatus="row">
 			<tr>
 				<td>${row.count }</td>
-				<td>${item.name }</td>
-				<td>${item.price }</td>
-				<td>${item.category.name }</td>
-				<td>${item.qty }</td>
+				<td>${pur.qty }</td>
+				<td>${pur.item.name }</td>
+				<td>${pur.saleDate}</td>
 			</tr>
 		</c:forEach>
 	</tbody>

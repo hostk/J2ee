@@ -18,15 +18,15 @@ public class SaleController {
 	
 	@RequestMapping(value="/new_sale.htm")
 	public String createSale(Model model) {
-		model.addAttribute("sList",new SaleItem());
-		model.addAttribute("itemList",itemServices.getItemList());
-		return "new_item";
+		model.addAttribute("sales",new SaleItem());
+		model.addAttribute("items",itemServices.getItemList());
+		return "new_sale";
 	}
 	
 	@RequestMapping(value="/new_sale.htm",method=RequestMethod.POST)
-	public String saveSale(@ModelAttribute(value="sList") SaleItem sList) throws Exception {
-		itemServices.saveSaleItem(sList);
-		return "redriect/sale_list.htm";
+	public String saveSale(@ModelAttribute(value="sales") SaleItem sList) throws Exception {
+		itemServices.saveSale(sList);
+		return "redirect:/sale_list.htm";
 	}
 	
 	@RequestMapping(value="/sale_list.htm")

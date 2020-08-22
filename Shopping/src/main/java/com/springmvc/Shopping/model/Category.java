@@ -1,5 +1,7 @@
 package com.springmvc.Shopping.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,18 +14,24 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Category")
-public class Category {
+public class Category implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private String name;
-	
+
 	public Category() {
 		
 	}
-	public Category(String name) {
+	
+	public Category(Integer id, String name) {
 		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	public Category(String name) {
 		this.name = name;
 	}
 	public Integer getId() {

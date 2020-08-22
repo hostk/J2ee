@@ -49,15 +49,19 @@ public class ItemServices {
 	public List<PurchaseItem> getPurchaseItem(){
 		return itemDao.getPurchaseItem();
 	}
-	public void saveSaleItem(SaleItem sale) throws Exception{
-		try {
-			itemDao.saveSale(sale);
-		}catch(Exception e){
-			throw e;
-		}
-	}
 	public List<SaleItem> getSaleItem(){
 		return itemDao.getSaleItem();
-	}
+}
+public void saveSale(SaleItem sale) {
+try {
+	itemDao.saveSale(sale);
+	Item item=sale.getItem();
+	int id=item.getId();
+	int qty=item.getQty();
+	itemDao.getItemBySubQty(id, qty);
+}catch(Exception ex) {
+	ex.printStackTrace();
+}	
 	
+}
 }
