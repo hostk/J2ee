@@ -9,17 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="new_sale.htm" method="post" modelAttribute="sales">
-<form:select path="item.id">
+<%@ include file="menu.jsp"%>
+<div class="container">
+<h1 class="h1 text-center">Add New Sale</h1>
+<form:form class="form" action="new_sale.htm" method="post" modelAttribute="sales">
+<form:select class="form-control" path="item.id">
 	<c:forEach items="${items}" var="cl">
 	<form:option value="${cl.id }">${cl.name }</form:option>
 	</c:forEach>
 </form:select><br>
-<label>QTY : </label>
-<form:input path="qty"/> <br>
-<label>Date : </label>
-<form:input path="saleDate"/> <br>
-<input type="submit" value="Save" />
+<form:input path="qty" class="form-control" placeholder="Enter the sale amount"/><br>
+<form:input path="saleDate" placeholder="Select the date" type="date" class="form-control" /><br>
+<input type="submit" value="Save" class="btn btn-success form-control"/>
 </form:form>
+</div>
 </body>
 </html>

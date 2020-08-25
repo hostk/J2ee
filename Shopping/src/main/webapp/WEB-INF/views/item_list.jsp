@@ -9,10 +9,11 @@
 <title>Item List</title>
 </head>
 <body>
-<h3>Item List</h3>
-<a href="newItem.htm">New Student</a>
-<table>
-	<thead>
+<%@ include file="menu.jsp"%>
+<div class="container">
+<h3 class="h1 text-center">Item List</h3>
+<table class="table">
+	<thead class="table-header bg-success">
 		<tr>
 			<th>No</th>
 			<th>Name</th>
@@ -25,8 +26,7 @@
 		<c:forEach items="${ items }" var="item" varStatus="row">
 			<tr>
 				<td>${row.count }</td>
-				<td><img src="./images/${item.photoPath }"/></td>
-				<td>${item.name }</td>
+				<td><img src="./images/${item.photoPath }" name="${item.name }"/></td>
 				<td>${item.price }</td>
 				<td>${item.category.name }</td>
 				<td>${item.qty }</td>
@@ -34,5 +34,6 @@
 		</c:forEach>
 	</tbody>
 </table>
+</div>
 </body>
 </html>

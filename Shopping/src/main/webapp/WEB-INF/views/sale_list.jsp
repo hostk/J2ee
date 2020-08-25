@@ -9,10 +9,11 @@
 <title>Item List</title>
 </head>
 <body>
-<h3>SaleItem List</h3>
-<a href="new_sale.htm">New Sale</a>
-<table>
-	<thead>
+<%@ include file="menu.jsp"%>
+<div class="container">
+<h3 class="h1 text-center">SaleItem List</h3>
+<table class="table table-light text-center">
+	<thead class="table-header bg-success">
 		<tr>
 			<th>No</th>
 			<th>QTY</th>
@@ -31,5 +32,6 @@
 		</c:forEach>
 	</tbody>
 </table>
+</div>
 </body>
 </html>

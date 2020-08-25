@@ -9,6 +9,7 @@
 <title>Item List</title>
 </head>
 <body>
+<%@ include file="menu.jsp"%>
 <h3>Item List</h3>
 <a href="newItem.htm">New Student</a>
 <table>

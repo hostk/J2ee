@@ -10,10 +10,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="new_category.htm" method="post" modelAttribute="categoryList">
-<label>Category Name</label>
-<form:input path="name" /> <br>
-<input type="submit" value="Save" />
+<%@ include file="menu.jsp"%>
+<div class="container">
+<h1 class="h1 text-center">Add New Category</h1>
+<form:form class="form text-center" action="new_category.htm" method="post" modelAttribute="categoryList">
+<label class="col-3 h4">Category Name</label>
+<form:input path="name" class="col-4"/>
+<input type="submit" value="Save" class="btn btn-success"/>
 </form:form>
+</div>
 </body>
 </html>

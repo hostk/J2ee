@@ -83,7 +83,7 @@ try {
 	itemDao.saveSale(sale);
 	Item item=sale.getItem();
 	int id=item.getId();
-	itemDao.getItemBySubQty(id, sale.getQty());
+	itemDao.updateItemBySale(id, sale.getQty());
 }catch(Exception ex) {
 	ex.printStackTrace();
 }	

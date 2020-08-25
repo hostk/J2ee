@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="menu.jsp"%>
 <form:form action="newItem.htm" method="POST" enctype="multipart/form-data" modelAttribute="iList">
 <label>Name</label>
 <form:input path="name" /> <br>

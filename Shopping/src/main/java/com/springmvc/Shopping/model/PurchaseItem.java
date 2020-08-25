@@ -16,6 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 @Table(name="PurchaseItem")
 public class PurchaseItem implements Serializable{
@@ -24,6 +26,8 @@ public class PurchaseItem implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private Integer qty;
+	
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private Date purchaseDate;
 	
 	public PurchaseItem(Integer id, Integer qty, Date purchaseDate, Item item) {

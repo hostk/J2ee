@@ -9,19 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="new_purchase.htm" method="post" modelAttribute="purchases">
-<label>Name</label>
-<form:input path="name" /> <br>
-<form:select path="item.id">
+<%@ include file="menu.jsp"%>
+<div class="container">
+<h1 class="h1 text-center">Add New Purchase Item</h1>
+<form:form class="form" action="new_purchase.htm" method="post" modelAttribute="purchases">
+<form:select path="item.id" class="form-control">
 	<c:forEach items="${items}" var="cl">
 	<form:option value="${cl.id }">${cl.name }</form:option>
 	</c:forEach>
 </form:select><br>
-<label>QTY : </label>
-<form:input path="qty"/> <br>
-<label>Date : </label>
-<form:input path="qty"/> <br>
-<input type="submit" value="Save" />
+<form:input path="qty" class="form-control" placeholder="Enter the purchase amount"/> <br>
+<form:input path="purchaseDate" class="form-control" type="date"/> <br>
+<input type="submit" value="Save" class="btn btn-success form-control"/>
 </form:form>
+</div>
 </body>
 </html>

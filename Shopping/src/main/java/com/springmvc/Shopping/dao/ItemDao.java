@@ -57,18 +57,20 @@ public class ItemDao {
 		Criteria cr = getSession().createCriteria(SaleItem.class);
 		return (List<SaleItem>)cr.list();
 	}
-	public void getItemByAddQty(int id,int qty) {
-		Query query= getSession().createQuery("UPDATE SET qty+=:qty Item WHERE id=:id");
+	public boolean updateItemByPurchase(int id,int qty) {
+		Query query= getSession().createQuery("UPDATE Item SET qty+=:qty WHERE id=:id");
 		query.setParameter("id", id);
 		query.setParameter("qty", qty);
 		query.executeUpdate();
+		return true;
 
 	}
-	public void getItemBySubQty(int id,int qty) {
-		Query query= getSession().createQuery("UPDATE SET qty-=:qty Item WHERE id=:id");
+	public boolean updateItemBySale(int id,int qty) {
+		Query query= getSession().createQuery("UPDATE Item SET qty-=:qty WHERE id=:id");
 		query.setParameter("id", id);
 		query.setParameter("qty", qty);
 		query.executeUpdate();
+		return true;
 	}
 	
 }
