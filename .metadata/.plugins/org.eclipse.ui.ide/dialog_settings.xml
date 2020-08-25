@@ -7,6 +7,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/minko/Desktop/FireFox_Download/spring_file_upload-master"/>
 			<item value="/home/minko/Desktop/FireFox_Download/spring_mvc_1-master"/>
 			<item value="/home/minko/Desktop/FireFox_Download/spring_bean_injection-master"/>
 			<item value="/home/minko/Desktop/FireFox_Download/onlinequiz"/>
@@ -27,6 +28,6 @@
 		<item key="DIALOG_Y_ORIGIN" value="121"/>
 		<item key="DIALOG_WIDTH" value="731"/>
 		<item key="DIALOG_HEIGHT" value="422"/>
-		<item key="TOGGLE_SELECTED" value="true"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
 	</section>
 </section>

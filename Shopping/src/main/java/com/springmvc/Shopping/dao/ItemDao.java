@@ -58,21 +58,17 @@ public class ItemDao {
 		return (List<SaleItem>)cr.list();
 	}
 	public void getItemByAddQty(int id,int qty) {
-		Query q = getSession().createQuery("from item where id= :id");
-		q.setParameter("id", id);
-		Item result = (Item)q.uniqueResult();
-		Integer i = result.getQty();
-		result.setQty(i+qty);
-		getSession().update(result);
+		Query query= getSession().createQuery("UPDATE SET qty+=:qty Item WHERE id=:id");
+		query.setParameter("id", id);
+		query.setParameter("qty", qty);
+		query.executeUpdate();
 
 	}
 	public void getItemBySubQty(int id,int qty) {
-		Query q = getSession().createQuery("from Item where id= :id");
-		q.setParameter("id", id);
-		Item result = (Item)q.uniqueResult();
-		Integer i = result.getQty();
-		result.setQty(i-qty);
-		getSession().update(result);
+		Query query= getSession().createQuery("UPDATE SET qty-=:qty Item WHERE id=:id");
+		query.setParameter("id", id);
+		query.setParameter("qty", qty);
+		query.executeUpdate();
 	}
 	
 }

@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="newItem.htm" method="post" modelAttribute="iList">
+<form:form action="newItem.htm" method="POST" enctype="multipart/form-data" modelAttribute="iList">
 <label>Name</label>
 <form:input path="name" /> <br>
 <form:select path="category.id">
@@ -20,6 +20,7 @@
 <label>QTY : </label>
 <form:input path="qty" /> <br>
 <label>Price</label><form:input path="price" /><br>
+<label>Image:</label><form:input type="file" path="file" /><br>
 <input type="submit" value="Save" />
 </form:form>
 </body>

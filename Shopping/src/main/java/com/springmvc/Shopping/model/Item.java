@@ -26,8 +26,17 @@ public class Item implements Serializable{
 	private String name;
 	private Integer qty;
 	private Double price;
+	private String photoPath;
 
 	
+	public String getPhotoPath() {
+		return photoPath;
+	}
+
+	public void setPhotoPath(String photoPath) {
+		this.photoPath = photoPath;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="category_id")
 	private Category category = new Category();
@@ -43,21 +52,32 @@ public class Item implements Serializable{
 
 	public Integer getId() {
 		return id;
-	}
+	}	
 
-	public Item(String name, Integer qty, Double price) {
+	public Item(String name, Integer qty, Double price, String photoPath) {
 		super();
 		this.name = name;
 		this.qty = qty;
 		this.price = price;
+		this.photoPath = photoPath;
 	}
 
-	public Item(Integer id, String name, Integer qty, Double price, Category category) {
+	public Item(Integer id, String name, Integer qty, Double price, String photoPath, Category category) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.qty = qty;
 		this.price = price;
+		this.photoPath = photoPath;
+		this.category = category;
+	}
+
+	public Item(String name, Integer qty, Double price, String photoPath, Category category) {
+		super();
+		this.name = name;
+		this.qty = qty;
+		this.price = price;
+		this.photoPath = photoPath;
 		this.category = category;
 	}
 

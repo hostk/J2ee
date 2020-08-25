@@ -25,6 +25,7 @@
 		<c:forEach items="${ items }" var="item" varStatus="row">
 			<tr>
 				<td>${row.count }</td>
+				<td><img src="./images/${item.photoPath }"/></td>
 				<td>${item.name }</td>
 				<td>${item.price }</td>
 				<td>${item.category.name }</td>
