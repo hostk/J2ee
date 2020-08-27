@@ -92,17 +92,10 @@ public class ItemServices {
 	
 	}
 	public List<Item> listAll(String keyword) {
-		if (keyword != null) {
         return itemDao.getItemBySearch(keyword);
-		}
-		return itemDao.getItemList();
 	}
 	public List<Item> getItemListByCategory(int cname) {
-		if(cname!=0) {
 		return itemDao.getItemListByCategory(cname);
-		}else{
-			return itemDao.getItemList();
-		}
 	}
 
 }
