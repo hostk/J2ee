@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.springmvc.Shopping.model.Category"/>
     <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-    <fullyQualifiedTypeName name="com.springmvc.Shopping.dao.ItemDao"/>
     <fullyQualifiedTypeName name="com.springmvc.Shopping.services.PurchaseService"/>
     <fullyQualifiedTypeName name="com.springmvc.Shopping.model.PurchaseItem"/>
     <fullyQualifiedTypeName name="com.springmvc.Shopping.model.SaleItem"/>
@@ -52,12 +50,14 @@
     <fullyQualifiedTypeName name="javax.validation.Valid"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
     <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
-    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
     <fullyQualifiedTypeName name="com.springmvc.Shopping.dao.ItemRepository"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.springmvc.Shopping.model.Item"/>
     <fullyQualifiedTypeName name="com.springmvc.Shopping.services.ItemServices"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.springmvc.Shopping.dao.ItemDao"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
 </qualifiedTypeNameHistroy>

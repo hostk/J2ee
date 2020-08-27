@@ -75,10 +75,16 @@ public class ItemDao{
 		return true;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Item> getItemBySearch(String search) {
+		if(search=="") {
+			Criteria cr = getSession().createCriteria(Item.class);
+			return (List<Item>) cr.list();
+		}else{
 		Criteria cr = getSession().createCriteria(Item.class);
-		cr.add(Restrictions.eq("name", search));
+		cr.add(Restrictions.like("name", search+"%"));
 		return (List<Item>) cr.list();
+		}
 	}
 	
 

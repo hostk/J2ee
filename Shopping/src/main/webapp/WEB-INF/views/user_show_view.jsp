@@ -11,12 +11,12 @@
 <body>
 <%@ include file="user_menu.jsp" %>
 <div class="container">
-				<ul id="mySearch">
+				<ul id="mySearch" class="stype-none">
           		<c:forEach items="${ items }" var="item" varStatus="row">
           		<li>
           		<div class="row" id="list">
           		<div class="cols-lg-4 p-3">
-				<img src="./images/${item.photoPath }" name="${item.name }" width="200"/>
+				<img src="./images/${item.photoPath }" name="${item.name }" width="150"/>
 				</div>
 				<div class="cols-lg-4 p-3 ml-5">
 				<p>Product Name: ${item.name }<br>
@@ -28,34 +28,6 @@
 				</li>
 			</c:forEach>
 			</ul>
-			<%-- <table class="table">
-	<thead class="table-header bg-danger text-light">
-		<tr>
-			<th>No</th>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Category</th>
-			<th>QTY</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach items="${ items }" var="item" varStatus="row">
-			<tr>
-				<td>${row.count }</td>
-				<td><img src="./images/${item.photoPath }" name="${item.name }"/></td>
-				<td>${item.price }</td>
-				<td>${item.category.name }</td>
-				<td>${item.qty }</td>
-			</tr>
-		</c:forEach>
-	</tbody>
-</table>
-</div>
-<script type="text/javascript">
-    function clearSearch() {
-        window.location = "[[@{/}]]";
-    }
-</script> --%>
 </div>
 </body>
 </html>

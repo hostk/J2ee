@@ -91,11 +91,6 @@ try {
 }	
 	
 }
-@Autowired
-public void setItemRepository(ItemDao itemRepository){
-    this.itemDao=itemRepository;
-}
-
 public List<Item> listAll(String keyword) {
 	if (keyword != null) {
         return itemDao.getItemBySearch(keyword);

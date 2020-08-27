@@ -38,34 +38,11 @@
       </li>
     </ul>
   </div>
-  <form:form class="form-inline" action="sumbit" method="GET">
-      <form:input id="search" class="form-control" type="text" placeholder="Search" path="${search }"/>
-      <input type="submit" value="Search">
+  <form:form class="form-inline" action="user_show" method="GET">
+      <input class="form-control" type="search" placeholder="Search" name="search"/>
+      <input type="submit" class="btn btn-light ml-3" value="Search">
       </form:form>
   </div>
 </nav>
-<script>
- $document.ready(function(){
-$( 'input', this ).on( 'keyup change', function () {
-    if ( table.column(i).search() !== this.value ) {
-        table
-            .column(i)
-            .search( this.value )
-            .draw();
-    }
-} );
-}); 
-</script>
-<script>
-    $(document).reday(function(){
-    	$("#search").on("keyup",function(){
-    		var value=$(this).val().toLowerCase();
-    		$("#mySearch li").filter(function(){
-    			$(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
-    		});
-    	});
-    });
-    
-</script>
 </body>
 </html>
