@@ -3,6 +3,7 @@ package com.springmvc.Shopping.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.springmvc.Shopping.dto.ItemDTO;
 import com.springmvc.Shopping.model.Category;
-import com.springmvc.Shopping.model.Item;
 import com.springmvc.Shopping.services.ItemServices;
 
 @Controller
 public class ItemController {
 
 	@Autowired
+   // @Qualifier(value="itemServices")
 	private ItemServices itemServices;
 	
 	@RequestMapping(value="/newItem.htm")
@@ -66,4 +67,5 @@ public class ItemController {
 		model.addAttribute("categorys", itemServices.getCatList());
 		return "category_list";
 	}
+	
 }

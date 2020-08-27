@@ -23,7 +23,7 @@ public class PurchaseService {
 			itemDao.savePurchase(purchase);
 			Item item=purchase.getItem();
 			int id=item.getId();
-			int qty=item.getQty();
+			int qty=purchase.getQty();
 			itemDao.updateItemByPurchase(id, qty);
 		}catch(Exception ex) {
 			ex.printStackTrace();

@@ -25,6 +25,7 @@ public class ItemServices {
 	ServletContext serveletContext;
 
 	
+	
 	@Autowired
 	ItemDao itemDao;
 	ItemDao iDao;
@@ -84,9 +85,22 @@ try {
 	Item item=sale.getItem();
 	int id=item.getId();
 	itemDao.updateItemBySale(id, sale.getQty());
+	System.out.println(item.getName()+item.getId()+item.getPhotoPath()+item.getQty());
 }catch(Exception ex) {
 	ex.printStackTrace();
 }	
 	
 }
+@Autowired
+public void setItemRepository(ItemDao itemRepository){
+    this.itemDao=itemRepository;
+}
+
+public List<Item> listAll(String keyword) {
+	if (keyword != null) {
+        return itemDao.getItemBySearch(keyword);
+    }
+	return itemDao.getItemList();
+}
+
 }

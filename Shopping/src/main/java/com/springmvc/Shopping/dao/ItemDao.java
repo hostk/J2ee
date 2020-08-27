@@ -16,7 +16,7 @@ import com.springmvc.Shopping.model.PurchaseItem;
 import com.springmvc.Shopping.model.SaleItem;
 
 @Repository
-public class ItemDao {
+public class ItemDao{
 	
 	@Autowired
 	SessionFactory sessionFactory;
@@ -57,20 +57,30 @@ public class ItemDao {
 		Criteria cr = getSession().createCriteria(SaleItem.class);
 		return (List<SaleItem>)cr.list();
 	}
+	
 	public boolean updateItemByPurchase(int id,int qty) {
-		Query query= getSession().createQuery("UPDATE Item SET qty+=:qty WHERE id=:id");
+		Query query= getSession().createQuery("UPDATE Item SET qty=qty+:qty WHERE id=:id");
 		query.setParameter("id", id);
 		query.setParameter("qty", qty);
 		query.executeUpdate();
 		return true;
 
 	}
+	
 	public boolean updateItemBySale(int id,int qty) {
-		Query query= getSession().createQuery("UPDATE Item SET qty-=:qty WHERE id=:id");
+		Query query= getSession().createQuery("UPDATE Item SET qty=qty-:qty WHERE id=:id");
 		query.setParameter("id", id);
 		query.setParameter("qty", qty);
 		query.executeUpdate();
 		return true;
 	}
+	
+	public List<Item> getItemBySearch(String search) {
+		Criteria cr = getSession().createCriteria(Item.class);
+		cr.add(Restrictions.eq("name", search));
+		return (List<Item>) cr.list();
+	}
+	
+
 	
 }

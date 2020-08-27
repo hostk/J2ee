@@ -19,7 +19,7 @@
 	</c:forEach>
 </form:select><br>
 <form:input path="qty" class="form-control" placeholder="Enter the sale amount"/><br>
-<form:input path="saleDate" placeholder="Select the date" type="date" class="form-control" /><br>
+<form:input path="saleDate" type="date" class="form-control" /><br>
 <input type="submit" value="Save" class="btn btn-success form-control"/>
 </form:form>
 </div>
