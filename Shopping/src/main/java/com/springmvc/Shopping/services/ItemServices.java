@@ -79,23 +79,30 @@ public class ItemServices {
 	public List<SaleItem> getSaleItem(){
 		return itemDao.getSaleItem();
 }
-public void saveSale(SaleItem sale) {
-try {
-	itemDao.saveSale(sale);
-	Item item=sale.getItem();
-	int id=item.getId();
-	itemDao.updateItemBySale(id, sale.getQty());
-	System.out.println(item.getName()+item.getId()+item.getPhotoPath()+item.getQty());
-}catch(Exception ex) {
-	ex.printStackTrace();
-}	
+	public void saveSale(SaleItem sale) {
+		try {
+			itemDao.saveSale(sale);
+			Item item=sale.getItem();
+			int id=item.getId();
+			itemDao.updateItemBySale(id, sale.getQty());
+			System.out.println(item.getName()+item.getId()+item.getPhotoPath()+item.getQty());
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}	
 	
-}
-public List<Item> listAll(String keyword) {
-	if (keyword != null) {
+	}
+	public List<Item> listAll(String keyword) {
+		if (keyword != null) {
         return itemDao.getItemBySearch(keyword);
-    }
-	return itemDao.getItemList();
-}
+		}
+		return itemDao.getItemList();
+	}
+	public List<Item> getItemListByCategory(int cname) {
+		if(cname!=0) {
+		return itemDao.getItemListByCategory(cname);
+		}else{
+			return itemDao.getItemList();
+		}
+	}
 
 }

@@ -26,15 +26,14 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown ml-4 text-light">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Category
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          		<c:forEach items="${ cList }" var="item" varStatus="row">
-          <a class="dropdown-item" href="${item.id }">${item.name}</a>
-          </c:forEach>
-          
-        </div>
+      <form:form class="form-inline" action="selectCategory" method="get">
+			<select name="category">
+				<c:forEach items="${cList }" var="item" varStatus="row">
+          		<option value="${item.id }">${item.name}</option>
+          		</c:forEach>
+        </select>
+        <input type="submit" value="Submit"/>
+        </form:form>
       </li>
     </ul>
   </div>

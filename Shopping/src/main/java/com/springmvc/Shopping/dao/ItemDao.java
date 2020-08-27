@@ -1,5 +1,6 @@
 package com.springmvc.Shopping.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -87,6 +88,17 @@ public class ItemDao{
 		}
 	}
 	
+	public List<Item> getItemListByCategory(int name) {
+		if(name!=0) {
+			String sql = "FROM Item WHERE category_id=:id";
+			Query query = getSession().createQuery(sql);
+			query.setParameter("id", name);
+			return (List<Item>) query.list();
+		}else {
+			Criteria cr = getSession().createCriteria(Item.class);
+			return (List<Item>) cr.list();
+		}
+	}
 
 	
 }
