@@ -2,16 +2,48 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
-		http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/security  
+    	http://www.springframework.org/schema/security/spring-security.xsd">
  
  	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
-
+<!-- This is for spring security usages -->
+ 	<security:http auto-config="true" use-expressions="true">  
+ 		<security:intercept-url pattern="/login.htm" access="permitAll"/>
+ 		<security:intercept-url pattern="/register.htm" access="permitAll"/>
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+         <security:intercept-url pattern="/manager/**" access="hasRole('ROLE_MANAGER')" />
+        <security:intercept-url pattern="/**" access="isFullyAuthenticated()" />
+        <security:access-denied-handler error-page="/403.htm"/>
+        <security:form-login 
+			login-processing-url="/login.htm"
+			login-page="/login.htm"
+			authentication-failure-url="/login.htm?error=1"
+			default-target-url="/index.htm"
+		/>
+		<security:logout 
+			logout-url="/logout.htm" 
+			logout-success-url="/login.htm"
+			delete-cookies="JSESSIONID" 
+			invalidate-session="true" 
+		/>  
+		<security:csrf disabled="true"/>
+    </security:http>  
+    <bean name="bcryptEncoder"
+	      class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <security:authentication-manager>  
+      <security:authentication-provider user-service-ref="userService" >
+        <security:password-encoder ref="bcryptEncoder" />       
+      </security:authentication-provider>  
+    </security:authentication-manager>  
+    <bean id="userService" class="com.springmvc.Shopping.services.UserService" />
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.springmvc.Shopping.*" />
@@ -37,9 +69,6 @@ class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 			<value>.jsp</value>
 		</property>
 	</bean>
-	<!-- <bean id="templateEngine"
-      class="org.thymeleaf.spring4.SpringTemplateEngine">
-  <property name="templateResolver" ref="templateResolver" />
-</bean> -->
+	
 	 <import resource="/spring-hibernate-container.xml"/>
 </beans>

@@ -1,4 +1,4 @@
-package com.springmvc.Shopping.dto;
+package com.springmvc.Shopping.dao;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.hibernate.sql.JoinType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.springmvc.Shopping.model.User;
+import com.springmvc.Shopping.model.LoginUser;
 import com.springmvc.Shopping.model.UserRole;
 
 @Repository
@@ -22,16 +22,16 @@ public class UserDao implements UserDaoInterface{
 		return sessionFactory.getCurrentSession();
 	}
 	@Override
-	public User findUserbyUserName(String name) {
-		Criteria cr = getSession().createCriteria(User.class).createAlias("userRole","r",JoinType.LEFT_OUTER_JOIN)
+	public LoginUser findUserbyUserName(String name) {
+		Criteria cr = getSession().createCriteria(LoginUser.class).createAlias("userRole","r",JoinType.LEFT_OUTER_JOIN)
 				.createAlias("r.privilegeList", "p",JoinType.LEFT_OUTER_JOIN);
 		cr.add(Restrictions.eq("name", name));
-		User user =(User) cr.uniqueResult();
+		LoginUser user =(LoginUser) cr.uniqueResult();
 		return user;
 	}
 
 	@Override
-	public void saveUser(User user) {
+	public void saveUser(LoginUser user) {
 		getSession().save(user);
 	}
 
